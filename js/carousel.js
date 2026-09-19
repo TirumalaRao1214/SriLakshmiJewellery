@@ -8,10 +8,9 @@
 
     var SLIDES = [
         {
-            src: 'images/hero/everyday.jpg',
-            srcMobile: 'images/hero/everyday.jpg',
+            src: 'images/hero/bridal-collection.jpg',
             alt: '1 Gram Gold Bridal Necklace Set — Sri Lakshmi Jewellers',
-            bg: '#2a0a12',
+            bg: '#1a0c06',
             eyebrow: 'BRIDAL COLLECTION',
             headline: 'TIMELESS BRIDAL<br>ELEGANCE',
             sub: 'Traditional 1-gram jewellery for unforgettable celebrations.',
@@ -20,10 +19,9 @@
             accent: '#c5a059'
         },
         {
-            src: 'images/hero/hero-banner.jpg',
-            srcMobile: 'images/hero/hero-banner.jpg',
-            alt: '1 Gram Gold Necklace — Sri Lakshmi Jewellers',
-            bg: '#1a1008',
+            src: 'images/hero/new-arrivals.jpg',
+            alt: '1 Gram Gold Necklace with Earrings — Sri Lakshmi Jewellers',
+            bg: '#0e1208',
             eyebrow: 'NEW ARRIVALS',
             headline: 'THE NEW<br>GOLDEN EDIT',
             sub: 'Discover our latest lightweight jewellery designs.',
@@ -32,10 +30,9 @@
             accent: '#c5a059'
         },
         {
-            src: 'images/hero/craft-story.jpg',
-            srcMobile: 'images/hero/craft-story.jpg',
+            src: 'images/hero/jhumkas.jpg',
             alt: '1 Gram Gold Jhumka Earrings — Sri Lakshmi Jewellers',
-            bg: '#0e1a10',
+            bg: '#120a06',
             eyebrow: 'JHUMKAS',
             headline: 'ICONIC<br>JHUMKAS',
             sub: 'Traditional silhouettes with intricate detailing.',
@@ -44,10 +41,9 @@
             accent: '#c5a059'
         },
         {
-            src: 'images/hero/festive.jpg',
-            srcMobile: 'images/hero/festive.jpg',
+            src: 'images/hero/daily-wear.jpg',
             alt: '1 Gram Gold Pendant — Sri Lakshmi Jewellers',
-            bg: '#1a1206',
+            bg: '#0e100a',
             eyebrow: 'DAILY WEAR',
             headline: 'EVERYDAY<br>GOLDEN ELEGANCE',
             sub: 'Lightweight designs made for everyday occasions.',
@@ -56,10 +52,9 @@
             accent: '#c5a059'
         },
         {
-            src: 'images/hero/gifting.jpg',
-            srcMobile: 'images/hero/gifting.jpg',
-            alt: '1 Gram Gold Temple Jewellery — Sri Lakshmi Jewellers',
-            bg: '#0c0c10',
+            src: 'images/hero/traditional.jpg',
+            alt: '1 Gram Gold Temple Necklace — Sri Lakshmi Jewellers',
+            bg: '#100e08',
             eyebrow: 'TRADITIONAL',
             headline: 'ROOTED IN<br>TRADITION',
             sub: 'Temple-inspired jewellery with timeless appeal.',
