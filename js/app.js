@@ -33,19 +33,114 @@ function showToast(message, duration = 3000) {
     }, duration);
 }
 
-// Mobile Menu Toggle
-function toggleMobileMenu() {
-    const navMenu = document.getElementById('navMenu');
-    if (navMenu) {
-        navMenu.classList.toggle('open');
-    }
+// ─── Mobile Navigation Drawer ────────────────────────────────────────────────
+
+// Track scroll position to prevent iOS jump when body becomes position:fixed
+var _menuScrollY = 0;
+
+function openMobileMenu() {
+    const drawer = document.getElementById('mobNavDrawer');
+    const overlay = document.getElementById('mobNavOverlay');
+    if (!drawer) return;
+
+    // Save scroll position before locking body (iOS fix)
+    _menuScrollY = window.scrollY || window.pageYOffset;
+    document.body.style.top = '-' + _menuScrollY + 'px';
+
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    if (overlay) overlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
 }
 
 function closeMobileMenu() {
-    const navMenu = document.getElementById('navMenu');
-    if (navMenu) {
-        navMenu.classList.remove('open');
+    const drawer = document.getElementById('mobNavDrawer');
+    const overlay = document.getElementById('mobNavOverlay');
+    if (!drawer) return;
+
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    if (overlay) overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+
+    // Restore scroll position (iOS fix)
+    document.body.style.top = '';
+    window.scrollTo(0, _menuScrollY);
+}
+
+// Legacy alias — hamburger button in HTML calls toggleMobileMenu()
+function toggleMobileMenu() {
+    const drawer = document.getElementById('mobNavDrawer');
+    if (drawer && drawer.classList.contains('is-open')) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
     }
+}
+
+// ─── Mobile Accordion (Jewellery top-level) ───────────────────────────────────
+
+function initMobileAccordions() {
+    // Top-level Jewellery accordion
+    const jewBtn = document.getElementById('mobJewelleryBtn');
+    const jewPanel = document.getElementById('mobJewelleryPanel');
+
+    if (jewBtn && jewPanel) {
+        jewBtn.addEventListener('click', function () {
+            const isOpen = jewBtn.getAttribute('aria-expanded') === 'true';
+            jewBtn.setAttribute('aria-expanded', String(!isOpen));
+            if (isOpen) {
+                jewPanel.hidden = true;
+            } else {
+                jewPanel.hidden = false;
+            }
+        });
+    }
+
+    // Sub-accordions (Category / By Style / By Occasion / By Price)
+    const subTriggers = document.querySelectorAll('.mob-sub-trigger');
+    subTriggers.forEach(function (trigger) {
+        trigger.addEventListener('click', function () {
+            const panel = trigger.nextElementSibling;
+            if (!panel) return;
+            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+            // Close all other sub-panels first (single-open behaviour)
+            subTriggers.forEach(function (t) {
+                if (t !== trigger) {
+                    t.setAttribute('aria-expanded', 'false');
+                    const p = t.nextElementSibling;
+                    if (p) p.hidden = true;
+                }
+            });
+
+            trigger.setAttribute('aria-expanded', String(!isOpen));
+            panel.hidden = isOpen;
+        });
+    });
+
+    // Overlay click closes drawer
+    const overlay = document.getElementById('mobNavOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close button
+    const closeBtn = document.getElementById('mobNavClose');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMobileMenu);
+    }
+
+    // Escape key closes drawer
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // All simple links inside drawer close menu on navigation
+    const drawerLinks = document.querySelectorAll('#mobNavDrawer .mob-nav-link--simple, #mobNavDrawer .mob-sub-panel a');
+    drawerLinks.forEach(function (link) {
+        link.addEventListener('click', closeMobileMenu);
+    });
 }
 
 // Carousel Scroll Navigation Helper
@@ -392,16 +487,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartBadge();
     updateWishlistUI();
 
-    // Mobile Navigation Accordions
-    const megaParents = document.querySelectorAll('.nav-item-has-mega > .nav-link');
-    megaParents.forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
-                e.preventDefault();
-                link.parentElement.classList.toggle('expanded');
-            }
-        });
-    });
+    // Mobile Navigation Drawer & Accordions
+    initMobileAccordions();
 
     // Close modals on outside click
     document.addEventListener('click', (e) => {

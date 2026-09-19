@@ -1084,7 +1084,7 @@
 
 .cat-scroll-wrap {
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
