@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Sri Lakshmi Jewellers - Product Details Page Styles (product.css)
+   Editorial layout with image gallery, accordion details & clean typography
+   ========================================================================== */
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    padding: 24px 0;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 48px;
+    background-color: var(--color-white);
+}
+
+.breadcrumb-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-list li a {
+    color: var(--color-charcoal);
+}
+
+.breadcrumb-list li a:hover {
+    color: var(--color-maroon);
+}
+
+.breadcrumb-separator {
+    color: #a8a29e;
+}
+
+/* Product Detail Main Grid */
+.product-detail-section {
+    padding-bottom: 110px;
+}
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 64px;
+    align-items: flex-start;
+}
+
+/* Image Gallery System */
+.product-gallery-wrap {
+    display: flex;
+    gap: 20px;
+    position: sticky;
+    top: 110px;
+}
+
+.product-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.thumbnail-item {
+    width: 80px;
+    height: 95px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    background-color: #f5f0ea;
+    transition: var(--transition-smooth);
+}
+
+.thumbnail-item.active, .thumbnail-item:hover {
+    border-color: var(--color-charcoal);
+    box-shadow: 0 0 0 1px var(--color-charcoal);
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-main-image-box {
+    flex: 1;
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: #f5f0ea;
+    aspect-ratio: 4 / 5;
+    cursor: crosshair;
+}
+
+.product-main-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+}
+
+/* Product Info Content */
+.product-info-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-category-crumb {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--color-gold-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.product-main-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--color-charcoal);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+}
+
+.product-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.product-sku-tag {
+    background-color: var(--color-cream);
+    padding: 3px 10px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--color-charcoal);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.product-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #c5a059;
+    font-weight: 500;
+}
+
+/* Pricing Section */
+.product-price-section {
+    padding: 20px 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.product-price-large {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--color-charcoal);
+}
+
+.product-original-price {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    text-decoration: line-through;
+}
+
+.product-summary-text {
+    font-size: 0.95rem;
+    color: #44403c;
+    line-height: 1.8;
+    margin-bottom: 28px;
+    font-weight: 300;
+}
+
+/* Size Selection */
+.size-selection-wrap {
+    margin-bottom: 28px;
+}
+
+.size-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-charcoal);
+    margin-bottom: 12px;
+}
+
+.size-options-grid {
+    display: flex;
+    gap: 12px;
+}
+
+.size-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.size-btn:hover, .size-btn.active {
+    border-color: var(--color-charcoal);
+    background-color: var(--color-charcoal);
+    color: var(--color-white);
+}
+
+/* Purchasing Actions */
+.product-actions-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+}
+
+.qty-and-cart-row {
+    display: flex;
+    gap: 14px;
+}
+
+.detail-qty-picker {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-white);
+}
+
+.detail-qty-picker button {
+    padding: 14px 18px;
+    font-size: 1.1rem;
+    color: var(--color-charcoal);
+}
+
+.detail-qty-picker button:hover {
+    background-color: var(--color-cream);
+}
+
+.detail-qty-picker span {
+    padding: 0 16px;
+    font-weight: 500;
+}
+
+.btn-add-bag {
+    flex: 1;
+}
+
+.btn-whatsapp-enquire {
+    width: 100%;
+    padding: 16px 28px;
+}
+
+/* Accordion Specifications */
+.product-accordion {
+    border-top: 1px solid var(--color-border);
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--color-charcoal);
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-icon {
+    font-size: 1.2rem;
+    transition: var(--transition-smooth);
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    display: none;
+    padding-bottom: 20px;
+    font-size: 0.88rem;
+    color: #57534e;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.specs-grid-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.specs-grid-mini div {
+    background: var(--color-ivory);
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+}
+
+.specs-grid-mini strong {
+    color: var(--color-charcoal);
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Related Products Section */
+.related-products-section {
+    padding: 100px 0;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+}

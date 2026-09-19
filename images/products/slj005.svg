@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+    <defs>
+        <radialGradient id="bgGrad" cx="50%" cy="40%" r="65%">
+            <stop offset="0%" stop-color="#1b2024"/>
+            <stop offset="100%" stop-color="#0b0f12"/>
+        </radialGradient>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef08a"/>
+            <stop offset="35%" stop-color="#d4af37"/>
+            <stop offset="70%" stop-color="#996515"/>
+            <stop offset="100%" stop-color="#f59e0b"/>
+        </linearGradient>
+        <linearGradient id="pendantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef9c3"/>
+            <stop offset="50%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#78350f"/>
+        </linearGradient>
+        <filter id="dropGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35"/>
+        </filter>
+        <pattern id="luxuryPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 40 20 L 20 40 L 0 20 Z" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.12"/>
+            <circle cx="20" cy="20" r="1.5" fill="#d4af37" opacity="0.15"/>
+        </pattern>
+    </defs>
+    
+    <!-- Background Canvas -->
+    <rect width="500" height="500" fill="url(#bgGrad)"/>
+    <!-- Subtle Pattern overlay -->
+    <rect width="500" height="500" fill="url(#luxuryPattern)"/>
+    
+    <!-- Inner Fine Border -->
+    <rect x="20" y="20" width="460" height="460" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="12,6" opacity="0.4"/>
+    <rect x="26" y="26" width="448" height="448" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.3"/>
+    
+    <!-- Corner Ornaments -->
+    <g stroke="#d4af37" stroke-width="1" fill="none" opacity="0.6">
+        <path d="M 30 50 L 50 30 M 30 30 L 55 30 M 30 30 L 30 55"/>
+        <path d="M 470 50 L 450 30 M 470 30 L 445 30 M 470 30 L 470 55"/>
+        <path d="M 30 450 L 50 470 M 30 470 L 55 470 M 30 470 L 30 445"/>
+        <path d="M 470 450 L 450 470 M 470 470 L 445 470 M 470 470 L 470 445"/>
+    </g>
+
+    <!-- Jewellery Illustration -->
+    <g id="jewelleryAsset">
+        
+        <g transform="translate(250, 230)">
+            <!-- Ring Band -->
+            <ellipse cx="0" cy="40" rx="60" ry="25" fill="none" stroke="url(#goldGrad)" stroke-width="14" filter="url(#dropGlow)"/>
+            <ellipse cx="0" cy="40" rx="60" ry="25" fill="none" stroke="#d4af37" stroke-width="4"/>
+            <!-- Ring Crown & Diamond -->
+            <polygon points="-30,-10 30,-10 42,-40 -42,-40" fill="url(#pendantGrad)" stroke="#c5a059" stroke-width="2"/>
+            <!-- Solitaire gemstone -->
+            <polygon points="-25,-40 25,-40 38,-65 0,-85 -38,-65" fill="#f8fafc" stroke="#38bdf8" stroke-width="2" filter="url(#dropGlow)"/>
+            <polygon points="0,-85 -25,-40 0,-40" fill="#e0f2fe" opacity="0.8"/>
+            <polygon points="0,-85 25,-40 0,-40" fill="#bae6fd" opacity="0.6"/>
+            <polygon points="-38,-65 -25,-40 -12,-40" fill="#7dd3fc" opacity="0.5"/>
+            <polygon points="38,-65 25,-40 12,-40" fill="#38bdf8" opacity="0.7"/>
+            <!-- Sparkles -->
+            <path d="M 55 -85 L 65 -90 L 55 -95 L 50 -105 L 45 -95 L 35 -90 L 45 -85 L 50 -75 Z" fill="#fff" opacity="0.9"/>
+        </g>
+        
+    </g>
+    
+    <!-- Bottom Brand & Label Ribbon -->
+    <rect x="50" y="405" width="400" height="55" rx="6" fill="#181513" opacity="0.85" stroke="#d4af37" stroke-width="1"/>
+    <text x="250" y="428" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="14" font-weight="600" fill="#f8f5ee" letter-spacing="2.5">SOLITAIRE FLORAL RING</text>
+    <text x="250" y="446" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10" font-weight="400" fill="#d4af37" letter-spacing="3.5">CONTEMPORARY DAILY</text>
+</svg>

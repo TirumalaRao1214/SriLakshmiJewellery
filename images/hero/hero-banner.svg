@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%">
+    <defs>
+        <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#120c08"/>
+            <stop offset="40%" stop-color="#2a1a14"/>
+            <stop offset="80%" stop-color="#3d151c"/>
+            <stop offset="100%" stop-color="#170c0e"/>
+        </linearGradient>
+        <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#fef08a"/>
+            <stop offset="50%" stop-color="#d4af37"/>
+            <stop offset="100%" stop-color="#aa7c11"/>
+        </linearGradient>
+        <pattern id="royalMandala" width="80" height="80" patternUnits="userSpaceOnUse">
+            <circle cx="40" cy="40" r="30" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.08"/>
+            <path d="M 40 0 Q 60 40 40 80 Q 20 40 40 0" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.07"/>
+            <path d="M 0 40 Q 40 60 80 40 Q 40 20 0 40" fill="none" stroke="#d4af37" stroke-width="0.4" opacity="0.07"/>
+        </pattern>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <rect width="1600" height="900" fill="url(#heroGrad)"/>
+    <rect width="1600" height="900" fill="url(#royalMandala)"/>
+    
+    <!-- Background Arch & Mandala Accent -->
+    <circle cx="1200" cy="450" r="360" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.25"/>
+    <circle cx="1200" cy="450" r="320" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="8,8" opacity="0.3"/>
+    <circle cx="1200" cy="450" r="280" fill="#200a10" opacity="0.4"/>
+
+    <!-- Left Editorial Brand Element -->
+    <g transform="translate(140, 380)">
+        <text x="0" y="0" font-family="'Cinzel', Georgia, serif" font-size="20" font-weight="600" fill="#d4af37" letter-spacing="8">SRI LAKSHMI JEWELLERS</text>
+        <text x="0" y="30" font-family="'Montserrat', sans-serif" font-size="13" font-weight="400" fill="#e2d9cc" letter-spacing="4">GUNTUR • 1-GRAM &amp; LIGHTWEIGHT LUXURY</text>
+    </g>
+
+    <!-- Right Jewellery Artwork Highlight -->
+    <g transform="translate(1200, 420)">
+        <!-- Layered Royal Necklace Set -->
+        <path d="M -180 -120 Q 0 160 180 -120" fill="none" stroke="url(#goldSheen)" stroke-width="12" filter="url(#glow)"/>
+        <path d="M -220 -80 Q 0 240 220 -80" fill="none" stroke="url(#goldSheen)" stroke-width="10"/>
+        <path d="M -220 -80 Q 0 240 220 -80" fill="none" stroke="#901a1e" stroke-width="4" stroke-dasharray="10,12"/>
+        
+        <!-- Large Center Lotus Temple Pendant -->
+        <g transform="translate(0, 200)">
+            <circle cx="0" cy="0" r="50" fill="url(#goldSheen)" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+            <circle cx="0" cy="0" r="34" fill="#6d0e1b"/>
+            <polygon points="0,-24 18,0 0,24 -18,0" fill="#fef08a"/>
+            <circle cx="0" cy="0" r="8" fill="#0f5132"/>
+            
+            <!-- Hanging Pearls -->
+            <circle cx="-35" cy="48" r="6" fill="#fff9eb"/>
+            <circle cx="-18" cy="56" r="7" fill="#fff9eb"/>
+            <circle cx="0" cy="62" r="8.5" fill="#fff9eb"/>
+            <circle cx="18" cy="56" r="7" fill="#fff9eb"/>
+            <circle cx="35" cy="48" r="6" fill="#fff9eb"/>
+        </g>
+        
+        <!-- Flanking Earrings -->
+        <g transform="translate(-160, 20)">
+            <circle cx="0" cy="0" r="16" fill="url(#goldSheen)"/>
+            <path d="M -20 40 C -20 15, 20 15, 20 40 Z" fill="url(#goldSheen)"/>
+            <circle cx="0" cy="52" r="6" fill="#fff9eb"/>
+        </g>
+        <g transform="translate(160, 20)">
+            <circle cx="0" cy="0" r="16" fill="url(#goldSheen)"/>
+            <path d="M -20 40 C -20 15, 20 15, 20 40 Z" fill="url(#goldSheen)"/>
+            <circle cx="0" cy="52" r="6" fill="#fff9eb"/>
+        </g>
+    </g>
+
+    <!-- Outer Fine Borders -->
+    <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#d4af37" stroke-width="1" opacity="0.3"/>
+    <rect x="48" y="48" width="1504" height="804" fill="none" stroke="#d4af37" stroke-width="0.5" stroke-dasharray="10,10" opacity="0.2"/>
+</svg>

@@ -1,0 +1,430 @@
+/* ==========================================================================
+   Sri Lakshmi Jewellers - Responsive Breakpoint System (responsive.css)
+   Desktop: 4 columns | Tablet: 3 columns | Mobile: 2 columns
+   ========================================================================== */
+
+/* Large Laptops / Screens (1200px and down) */
+@media (max-width: 1200px) {
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .catalogue-grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 24px;
+        row-gap: 40px;
+    }
+
+    .category-editorial-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .moments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mega-menu {
+        /* Still uses responsive min() — no fixed px override needed */
+        grid-template-columns:
+            minmax(130px, 1.2fr)
+            minmax(120px, 1fr)
+            minmax(130px, 1fr)
+            minmax(110px, 0.9fr)
+            minmax(180px, 0.8fr);
+        gap: 20px;
+    }
+
+    .carousel-slide {
+        flex: 0 0 calc(33.333% - 19px);
+    }
+}
+
+/* Tablets (992px and down) */
+@media (max-width: 992px) {
+    :root {
+        --header-height: 74px;
+    }
+
+    .top-bar-links {
+        display: none;
+    }
+
+    .top-bar-inner {
+        justify-content: center;
+    }
+
+    /* Full-screen Mobile Navigation Drawer */
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: -100%;
+        width: 100%;
+        max-width: 360px;
+        height: calc(100vh - var(--header-height));
+        background-color: var(--color-white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
+        gap: 0;
+        box-shadow: var(--shadow-modal);
+        transition: var(--transition-slow);
+        overflow-y: auto;
+        z-index: 1500;
+    }
+
+    .nav-menu.open {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 18px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* On mobile/tablet, the mega item reverts to position:relative for the accordion */
+    .nav-item-has-mega {
+        position: relative;
+    }
+
+    .mega-menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        border-top: 1px solid var(--color-border);
+        padding: 10px 0 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        display: none;
+        overflow: visible;
+    }
+
+    .nav-item-has-mega.expanded .mega-menu {
+        display: grid;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .mega-featured-card {
+        display: none;
+    }
+
+    .hero-section {
+        height: 75vh;
+        min-height: 520px;
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .carousel-slide {
+        flex: 0 0 calc(50% - 14px);
+    }
+
+    .catalogue-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .brand-story-split, .store-split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-gallery-wrap {
+        position: static;
+    }
+}
+
+/* Mobile Devices (768px and down) */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .brand-name {
+        font-size: 1.25rem;
+        letter-spacing: 3px;
+    }
+
+    .brand-tagline {
+        font-size: 0.58rem;
+    }
+
+    .hero-section {
+        height: 70vh;
+        min-height: 480px;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.92rem;
+        margin-bottom: 28px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .category-editorial-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .moments-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .moment-card {
+        aspect-ratio: 16 / 9;
+    }
+
+    /* 2 Columns on Mobile for Catalogue & Trending */
+    .catalogue-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 14px;
+        row-gap: 32px;
+    }
+
+    .carousel-slide {
+        flex: 0 0 calc(65% - 10px); /* 1.5 visible items on mobile */
+    }
+
+    .carousel-nav-btn {
+        display: none;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding-bottom: 90px;
+    }
+
+    .mobile-bottom-bar {
+        display: block;
+    }
+
+    body {
+        padding-bottom: 60px;
+    }
+
+    .floating-whatsapp-btn {
+        bottom: 74px;
+        right: 18px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .product-gallery-wrap {
+        flex-direction: column-reverse;
+    }
+
+    .product-thumbnails {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .thumbnail-item {
+        width: 65px;
+        height: 75px;
+        flex-shrink: 0;
+    }
+
+    .product-main-title {
+        font-size: 1.7rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .search-modal {
+        padding: 20px 12px;
+    }
+
+    .search-results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-dropdowns-group {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        flex-wrap: nowrap;
+    }
+}
+
+/* ==========================================================================
+   Hero Carousel + Category Carousel + Chatbot — Responsive Overrides
+   ========================================================================== */
+
+/* ── 992px (Tablet) ──────────────────────────────────── */
+@media (max-width: 992px) {
+    .hero-carousel {
+        height: 72vh;
+        min-height: 480px;
+    }
+
+    .hc-headline {
+        font-size: 2.6rem;
+    }
+
+    .hc-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .cat-card {
+        flex: 0 0 170px;
+    }
+
+    /* Chatbot window */
+    .chatbot-window {
+        width: 360px;
+    }
+}
+
+/* ── 768px (Mobile) ──────────────────────────────────── */
+@media (max-width: 768px) {
+    .hero-carousel {
+        height: 75vh;
+        min-height: 440px;
+    }
+
+    .hc-headline {
+        font-size: 2rem;
+    }
+
+    .hc-sub {
+        font-size: 0.9rem;
+    }
+
+    .hc-cta {
+        font-size: 0.75rem;
+        padding: 12px 22px;
+    }
+
+    /* Hide arrows on mobile — swipe is available */
+    .hc-arrow {
+        display: none;
+    }
+
+    /* Dots stay visible */
+    .hc-dots {
+        bottom: 20px;
+    }
+
+    .cat-card {
+        flex: 0 0 145px;
+    }
+
+    .cat-track {
+        padding: 8px 18px 16px;
+        gap: 14px;
+    }
+
+    /* Chatbot full-width on mobile */
+    .chatbot-fab {
+        bottom: 88px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .chatbot-fab-tooltip {
+        display: none;
+    }
+
+    .chatbot-window {
+        width: calc(100vw - 24px);
+        right: 12px;
+        height: 75vh;
+        bottom: 80px;
+        max-height: calc(100vh - 100px);
+    }
+}
+
+/* ── 480px (Small Mobile) ─────────────────────────────── */
+@media (max-width: 480px) {
+    .hc-headline {
+        font-size: 1.75rem;
+    }
+
+    .chatbot-window {
+        right: 8px;
+        width: calc(100vw - 16px);
+    }
+}
