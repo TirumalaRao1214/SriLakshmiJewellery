@@ -394,12 +394,21 @@ body.menu-open {
         flex-wrap: nowrap;
     }
 
-    /* ── Chatbot ─────────────────────────────────────────── */
-    .chatbot-fab {
-        bottom: calc(var(--mob-bottom-nav-h) + 16px);
+    /* ── Floating WhatsApp button (right side) ───────────── */
+    .floating-whatsapp-btn {
+        bottom: calc(var(--mob-bottom-nav-h) + 14px);
         right: 14px;
-        width: 48px;
-        height: 48px;
+        width: 46px;
+        height: 46px;
+        z-index: 1001;
+    }
+
+    /* ── Chatbot FAB (left of WhatsApp) ──────────────────── */
+    .chatbot-fab {
+        bottom: calc(var(--mob-bottom-nav-h) + 14px);
+        right: 68px;   /* 14px gap + 46px WA button + 8px = 68px from right edge */
+        width: 46px;
+        height: 46px;
         z-index: 1001;
     }
 
@@ -410,7 +419,7 @@ body.menu-open {
     .chatbot-window {
         width: calc(100vw - 20px);
         right: 10px;
-        bottom: calc(var(--mob-bottom-nav-h) + 70px);
+        bottom: calc(var(--mob-bottom-nav-h) + 68px);
         height: 72vh;
         max-height: calc(100dvh - 140px);
         z-index: 1001;
@@ -553,9 +562,23 @@ body.menu-open {
         font-size: clamp(1.5rem, 7.5vw, 2rem) !important;
     }
 
+    /* Override chatbot.css internal 480px rule — keep FAB left of WA button */
+    .chatbot-fab {
+        bottom: calc(var(--mob-bottom-nav-h) + 14px) !important;
+        right: 68px !important;
+        width: 46px !important;
+        height: 46px !important;
+    }
+
     .chatbot-window {
         right: 6px;
         width: calc(100vw - 12px);
+        bottom: calc(var(--mob-bottom-nav-h) + 68px) !important;
+    }
+
+    .floating-whatsapp-btn {
+        bottom: calc(var(--mob-bottom-nav-h) + 14px) !important;
+        right: 14px !important;
     }
 
     .col-product-card {
